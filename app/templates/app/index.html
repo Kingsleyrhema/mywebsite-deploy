@@ -1,0 +1,512 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title >RHEHUB DEVELOPERS</title>
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/mylogo1.png' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Planeto Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xK6xAhjdW4CFgB0e1l4DkKzKcNMG7VnkkRYhZJ7HouFro9u9KjIWkYqDY3YVZ20jIlx5Bt86IOBcbmJuDm1bXQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+<link href="{% static 'CSS/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'CSS/style.css' %}" rel='stylesheet' type='text/css' />
+<script src="{% static 'JS/jquery-1.11.0.min.js' %}"></script>
+<link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
+<!---- start-smoth-scrolling---->
+<script type="text/javascript" src="{% static 'JS/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'JS/easing.js' %}"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+
+<!--start-smoth-scrolling-->
+<style>
+	.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(8px); 
+}
+
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 100%;
+	max-width: 600px;
+}
+</style>
+</head>
+<body>
+<!--start-banner-->
+	<div class="banner" id="home">
+			<div class="header">
+			<div class="logo">
+				<img src="{% static 'images/mylogo1.png' %}">
+				<a href="{% url 'app:index' %}"><b style="font-size: 30px;">REHUB DEVELOPERS</b> <p>founded by Kingsley Rhema</p></a>
+			</div>
+			<div class="navigation">
+				 <span class="menu"></span> 
+					<ul class="navig">
+						<li><a href="{% url 'app:index' %}" class="active">HOME</a></li><span><img src="{% static 'images/clk.png'%}" alt="" /></span>
+						<li><a href="{% url 'app:about' %}">ABOUT US</a></li><span><img src="{% static 'images/clk.png' %}" alt="" /></span>
+						<li><a href="{% url 'app:services' %}">SERVICES</a></li><span><img src="{% static 'images/clk.png' %}" alt="" /></span>
+						<li><a href="{% url 'app:projects' %}">PROJECTS</a></li><span><img src="{% static 'images/clk.png' %}" alt="" /></span>
+						<li><a href="{% url 'app:contact' %}">CONTACT</a></li>
+					</ul>
+			</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="banner-main">
+				<div class="container">	
+					<div class="banner-top">
+						<h1>TOP-NOTCH TECHNOLOGICAL DRIVEN SERVICES IN ONE PLACE</h1>
+						<div class="banner-top-btm">
+							<div class="col-md-6 bnr-left">
+								<img src="{% static 'images/icn-1.png' %}" alt="" />
+							</div>
+							<div class="col-md-6 bnr-right">
+								<img src="{% static 'images/icn-2.png' %}" alt="" />
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					<div class="banner-bottom">
+						<div class="banner-slide">
+						<div  id="top" class="callbacks_container">
+			      			<ul class="rslides" id="slider4">
+				        	<li>
+								<img src="{% static 'images/slide-1.png' %}" alt="" />
+							</li>
+							<li>
+								<img src="{% static 'images/slide-2.png' %}" alt="" />
+							</li>
+							<li>
+								<img src="{% static 'images/slide-3.png' %}" alt="" />
+							</li>
+			      	</ul>
+			    </div>
+			  <div class="clearfix"> </div>
+			  </div>
+				</div>
+				</div>
+			</div>
+		</div>	
+	<!-- script-for-menu -->
+		 <script>
+				$("span.menu").click(function(){
+					$(" ul.navig").slideToggle("slow" , function(){
+					});
+				});
+		 </script>
+		 <!-- script-for-menu -->
+		  <!--Slider-Starts-Here-->
+				<script src="{% static 'JS/responsiveslides.min.js' %}"></script>
+			 <script>
+			    // You can also use "$(window).load(function() {"
+			    $(function () {
+			      // Slideshow 4
+			      $("#slider4").responsiveSlides({
+			        auto: true,
+			        pager: true,
+			        nav: false,
+			        speed: 500,
+			        namespace: "callbacks",
+			        before: function () {
+			          $('.events').append("<li>before event fired.</li>");
+			        },
+			        after: function () {
+			          $('.events').append("<li>after event fired.</li>");
+			        }
+			      });
+			
+			    });
+			  </script>
+			<!--End-slider-script-->		
+	<!--end-banner-->
+	<!--start-idea-->
+	<div class="idea">
+		<div class="container">
+			<div class="idea-main">
+				<div class="idea-top">
+					<div class="col-md-5 idea-left id-left">
+						<img src="{% static 'images/idea-1.png' %}" alt="" />
+					</div>
+					<div class="col-md-7 idea-right id-right">
+						<h3>WEB DEVELOPMENT</h3>
+						<p>Are you looking for a highly skilled Python developer to create a robust and scalable web application for your business? Look no further! With years of experience and expertise in web development, I offer professional services that will take your online presence to the next level. Harnessing the power of Python and the latest web technologies, I can deliver tailored solutions that meet your specific business requirements.</p>
+						<div class="i-btn">
+							<a onclick="openModal('web-development')">READ MORE</a>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="idea-top">
+					<div class="col-md-7 idea-right id-one-left">
+						<h3>SCRIPTING AND AUTOMATION</h3>
+						<p>Are you in need of powerful and efficient scripting and automation solutions for your business? Our team of Python experts can help streamline your processes, save time, and enhance productivity. With extensive experience in scripting and automation, we provide customized solutions that meet your specific requirements..</p>
+						<div class="i-btn">
+							<a onclick="openModal('scripting-and-automation')">READ MORE</a>
+						</div>
+					</div>
+					<div class="col-md-5 idea-left id-one-right">
+						<img src="{% static 'images/idea-2.png' %}" alt="" />
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="idea-top">
+					<div class="col-md-5 idea-left id-left">
+						<img src="{% static 'images/idea-2.png' %}" alt="" />
+					</div>
+					<div class="col-md-7 idea-right id-right">
+						<h3>MACHINE LEARNING & AI</h3>
+						<p>Are you looking to leverage the power of Machine Learning (ML) and Artificial Intelligence (AI) to gain valuable insights and automate processes in your business? Our team of Python experts specializes in developing cutting-edge ML and AI solutions tailored to your specific needs. With in-depth knowledge of ML algorithms, frameworks, and libraries, we can help you unlock the full potential of your data.</p>
+						<div class="i-btn">
+							<a onclick="openModal('machine-learning-and-ai')">READ MORE</a>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!-- Modal box -->
+<div id="modal-box" class="modal">
+	<div class="modal-content">
+		<span class="close" onclick="closeModal()">&times;</span>
+		<div id="modal-content-placeholder"></div>
+	</div>
+</div>
+
+	<!--end-idea-->
+	<!--start-number-->
+	<div class="number">
+		<div class="container">
+			<div class="number-main">
+				<h3>Why you should choose us ... ;)</h3>
+			</div>
+			<div class="number-bottom">
+				<ul>
+					<li>
+						<p>Experience and expertise for top-quality services..</p>
+					</li>
+					<li>
+						<span class="one"><img src="{% static 'images/clk.png' %}" alt="" /></span>
+						<p>Innovative thinking to make your brand stand out.</p>
+					</li>
+					<li>
+						<span class="two"><img src="{% static 'images/clk.png' %}" alt="" /></span>
+						<p>Results-driven campaigns for business growth.</p>
+					</li>
+					<li>
+						<span class="tre"><img src="{% static 'images/clk.png' %}" alt="" /></span>
+						<p>Competitive pricing without compromising quality.</p>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--end-number-->
+
+	<!--Slider-Starts-Here-->
+				<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+			 <script>
+			    // You can also use "$(window).load(function() {"
+			    $(function () {
+			      // Slideshow 4
+			      $("#slider5").responsiveSlides({
+			        auto: true,
+			        pager: false,
+			        nav: true,
+			        speed: 500,
+			        namespace: "callbacks",
+			        before: function () {
+			          $('.events').append("<li>before event fired.</li>");
+			        },
+			        after: function () {
+			          $('.events').append("<li>after event fired.</li>");
+			        }
+			      });
+			
+			    });
+			  </script>
+			<!--End-slider-script-->
+	
+	<link rel="stylesheet" href="{% static 'CSS/swipebox.css' %}">
+	<script src="{% static 'JS/jquery.swipebox.min.js' %}"></script> 
+	    <script type="text/javascript">
+			jQuery(function($) {
+				$(".swipebox").swipebox();
+			});
+		</script>
+	<!-- Portfolio Ends Here -->
+	<script type="text/javascript" src="{% static 'js/jquery.mixitup.min.js' %}"></script>
+<script type="text/javascript">
+$(function () {
+	
+	var filterList = {
+	
+		init: function () {
+		
+			// MixItUp plugin
+		// http://mixitup.io
+		$('#portfoliolist').mixitup({
+			targetSelector: '.portfolio',
+			filterSelector: '.filter',
+			effects: ['fade'],
+			easing: 'snap',
+			// call the hover effect
+			onMixEnd: filterList.hoverEffect()
+		});				
+	
+	},
+	
+	hoverEffect: function () {
+	
+		// Simple parallax effect
+		$('#portfoliolist .portfolio').hover(
+			function () {
+				$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+				$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');				
+			},
+			function () {
+				$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+				$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
+			}		
+		);				
+	
+	}
+
+};
+
+// Run the show!
+	filterList.init();
+	
+});	
+
+
+</script>
+<script>
+	// Open the modal and display content based on the selected service
+	function openModal(serviceName) {
+		var modal = document.getElementById('modal-box');
+		var modalContent = document.getElementById('modal-content-placeholder');
+
+		// Update the modal content based on the selected service
+		switch (serviceName) {
+			case 'web-development':
+  modalContent.innerHTML = `
+    <h1>Professional Web Development Services by Expert Python Developers</h1>
+    <p>Are you looking for highly skilled Python developers to create robust and scalable web applications for your business? Look no further! With years of experience and expertise in web development, we offer professional services that will take your online presence to the next level. Harnessing the power of Python and the latest web technologies, we can deliver tailored solutions that meet your specific business requirements.</p>
+
+    <h2>Services Offered:</h2>
+    <ol>
+      <li>
+        <h3>Custom Web Application Development:</h3>
+        <p>We specialize in developing customized web applications from scratch, ensuring they align perfectly with your business goals. Using Python frameworks like Django and Flask, we create dynamic and feature-rich applications that provide exceptional user experiences.</p>
+      </li>
+      <li>
+        <h3>Responsive Web Design:</h3>
+        <p>In today's mobile-driven world, having a responsive website is crucial. We can design and develop responsive websites that adapt seamlessly to different devices and screen sizes. By leveraging modern front-end technologies like HTML5, CSS3, and JavaScript frameworks, we ensure your website looks and functions flawlessly across all platforms.</p>
+      </li>
+      <li>
+        <h3>E-commerce Development:</h3>
+        <p>If you're planning to sell products or services online, we can build a secure and efficient e-commerce platform using Python and frameworks like Django or popular platforms like Shopify. From product catalog management to secure payment integration, we provide end-to-end e-commerce solutions that drive conversions and enhance user experience.</p>
+      </li>
+      <li>
+        <h3>API Development and Integration:</h3>
+        <p>Need to integrate your web application with third-party services or create a robust API for your own platform? We can develop RESTful APIs using Python and frameworks like Django REST Framework or Flask-RESTful. We ensure seamless integration, efficient data exchange, and secure communication between systems.</p>
+      </li>
+      <li>
+        <h3>Database Integration and Optimization:</h3>
+        <p>We have extensive experience in integrating databases into web applications. Using powerful Python libraries like SQLAlchemy, we can design and optimize your database structure for efficiency, reliability, and scalability.</p>
+      </li>
+      <li>
+        <h3>Ongoing Maintenance and Support:</h3>
+        <p>As dedicated Python developers, we provide continuous maintenance and support services for your web application. From bug fixes and performance optimization to security updates and feature enhancements, we ensure your application runs smoothly and remains up-to-date.</p>
+      </li>
+    </ol>
+
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>Expertise in Python web development</li>
+      <li>Proven track record of delivering successful projects</li>
+      <li>Tailored solutions that meet your unique business needs</li>
+      <li>Strong focus on code quality, performance, and security</li>
+      <li>Excellent communication and collaboration throughout the development process</li>
+    </ul>
+
+    <h2>Get in Touch:</h2>
+    <p>Ready to take your web presence to new heights? Contact us today to discuss your project requirements and get a free consultation. Together, we'll bring your vision to life and create a cutting-edge web application that propels your business forward.</p>
+  `;
+  break;
+  case 'scripting-and-automation':
+  modalContent.innerHTML = `
+    <h1>Efficient Scripting and Automation Services by Python Experts</h1>
+    <p>Are you in need of powerful and efficient scripting and automation solutions for your business? Our team of Python experts can help streamline your processes, save time, and enhance productivity. With extensive experience in scripting and automation, we provide customized solutions that meet your specific requirements.</p>
+
+    <h2>Services Offered:</h2>
+    <ol>
+      <li>
+        <h3>Script Development:</h3>
+        <p>We specialize in developing Python scripts to automate repetitive tasks and streamline your workflow. From data processing and file manipulation to system administration and application automation, we can create scripts tailored to your needs.</p>
+      </li>
+      <li>
+        <h3>Web Scraping and Data Extraction:</h3>
+        <p>Need to gather data from websites or extract information from complex documents? Our Python experts can develop web scraping scripts and data extraction tools that automate the process, saving you time and effort. We ensure accurate and reliable data extraction, regardless of the complexity of the source.</p>
+      </li>
+      <li>
+        <h3>Process Automation:</h3>
+        <p>We can automate your manual business processes by developing custom scripts and tools. Whether it's automating data entry, generating reports, or integrating systems, our scripting and automation solutions can help you streamline your operations and increase efficiency.</p>
+      </li>
+      <li>
+        <h3>Error Handling and Logging:</h3>
+        <p>Our Python experts can implement robust error handling and logging mechanisms in your scripts, ensuring smooth execution and easy debugging. We focus on creating scripts that are reliable, maintainable, and scalable.</p>
+      </li>
+      <li>
+        <h3>Task Scheduling and Integration:</h3>
+        <p>We can integrate your scripts into scheduling systems, such as cron jobs or Windows Task Scheduler, to automate recurring tasks. Additionally, we can integrate your scripts with other systems and APIs to create seamless end-to-end automation workflows.</p>
+      </li>
+    </ol>
+
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>Expertise in Python scripting and automation</li>
+      <li>Proven track record of delivering efficient solutions</li>
+      <li>Customized scripts tailored to your specific needs</li>
+      <li>Focus on reliability, maintainability, and scalability</li>
+      <li>Excellent problem-solving and debugging skills</li>
+    </ul>
+
+    <h2>Get in Touch:</h2>
+    <p>Ready to automate your processes and boost productivity? Contact us today to discuss your scripting and automation requirements. We'll work closely with you to develop customized solutions that streamline your workflows and save you valuable time and resources.</p>
+  `;
+  break;
+  case 'machine-learning-and-ai':
+  modalContent.innerHTML = `
+    <h1>Advanced Machine Learning and AI Solutions by Python Experts</h1>
+    <p>Are you looking to leverage the power of Machine Learning (ML) and Artificial Intelligence (AI) to gain valuable insights and automate processes in your business? Our team of Python experts specializes in developing cutting-edge ML and AI solutions tailored to your specific needs. With in-depth knowledge of ML algorithms, frameworks, and libraries, we can help you unlock the full potential of your data.</p>
+
+    <h2>Services Offered:</h2>
+    <ol>
+      <li>
+        <h3>Data Preprocessing and Exploration:</h3>
+        <p>We can assist you in cleaning, transforming, and exploring your data to ensure its quality and suitability for ML and AI applications. With expertise in Python libraries like Pandas and NumPy, we handle various data types and formats efficiently.</p>
+      </li>
+      <li>
+        <h3>ML Model Development and Training:</h3>
+        <p>Our Python experts have hands-on experience in developing ML models using popular frameworks like scikit-learn, TensorFlow, and PyTorch. We analyze your data, select appropriate algorithms, and train models that deliver accurate predictions and actionable insights.</p>
+      </li>
+      <li>
+        <h3>Deep Learning and Neural Networks:</h3>
+        <p>If you require advanced AI solutions, we specialize in developing deep learning models and neural networks. Using frameworks like TensorFlow and Keras, we build complex architectures that can process and analyze large volumes of data, enabling tasks such as image recognition, natural language processing, and recommendation systems.</p>
+      </li>
+      <li>
+        <h3>Model Evaluation and Optimization:</h3>
+        <p>We assess the performance of ML models using appropriate evaluation metrics and techniques. By fine-tuning hyperparameters, implementing regularization methods, and conducting feature selection, we optimize models to achieve the best possible performance.</p>
+      </li>
+      <li>
+        <h3>Deployment and Integration:</h3>
+        <p>We can help you deploy ML and AI models into production systems, whether it's integrating them with web applications or creating standalone APIs. Our Python experts ensure seamless integration, scalability, and efficient model serving.</p>
+      </li>
+      <li>
+        <h3>Custom ML and AI Solutions:</h3>
+        <p>If you have a specific ML or AI requirement unique to your business, we can develop custom solutions tailored to your needs. From anomaly detection and predictive analytics to recommendation engines and chatbots, we can turn your ideas into reality.</p>
+      </li>
+    </ol>
+
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>Expertise in ML and AI development using Python</li>
+      <li>Extensive knowledge of ML algorithms, frameworks, and libraries</li>
+      <li>Customized solutions that cater to your specific business needs</li>
+      <li>Focus on accuracy, performance, and scalability</li>
+      <li>Excellent problem-solving and debugging skills</li>
+    </ul>
+
+    <h2>Get in Touch:</h2>
+    <p>Ready to unlock the power of Machine Learning and Artificial Intelligence for your business? Contact us today to discuss your ML and AI requirements. We'll work closely with you to develop advanced solutions that harness the potential of your data and drive meaningful business outcomes.</p>
+  `;
+  break;
+
+
+				default:
+				modalContent.innerHTML = ''; // Clear the content if no matching service found
+				break;
+		}
+
+		modal.style.display = 'block';
+	}
+
+	// Close the modal
+	function closeModal() {
+		var modal = document.getElementById('modal-box');
+		modal.style.display = 'none';
+	}
+</script>
+
+	<!--start-footer-->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-main">
+				<div class="contact">
+					<div class="col-md-8 contact-left">
+						<img style="size: 10pt;" src="{% static 'images/mylogo1.png' %}">
+						<b style="font-size: 30px;">REHUB DEVELOPERS</b> <p>founded by Kingsley Rhema</p>
+					</div>
+					<div class="col-md-4 contact-right footer-left">
+						<h3>QUICK CONTACTS</h3>
+						<p>+234 808 204 6332</p>
+						<p><a href="mailto:kingsleyrhema135@gmail.com" style="font-size: 20px;">OR click to send us a mail @ kingsleyrhema135@gmail.com</a></p>
+						<ul>
+							<li><a href="https://web.facebook.com/remzo.kingsley"><span class="fb"><img style="height: 30px;" src="{% static 'images/fb_icon.jpg' %}"> </span></a></li>
+							<li><a href="https://twitter.com/ikechukwurhema"><span class="twit"><img style="height: 30px;" src="{% static 'images/twitter_icon.jpg' %}"></span></a></li>
+							<li><a href="https://www.instagram.com/kingsleyrhema/"><span class="insta"><img style="height: 30px;" src="{% static 'images/insta_icon.jpeg' %}"></span></a></li>
+							<li><a href="https://www.youtube.com/channel/UChHGxpOkkYciX_1SSL0LKpw"><span class="sky"> <img style="height: 50px;" src="{% static 'images/youtube_icon.jpg' %}"> </span></a></li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div><!--
+				<div class="footer-bottom">
+					<div class="col-md-4 footer-left">
+						<ul>
+							<li><a href="#"><span class="fb"> </span></a></li>
+							<li><a href="#"><span class="twit"> </span></a></li>
+							<li><a href="#"><span class="sky"> </span></a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 footer-middle">
+						<p>input something  </p>
+					</div>
+					<div class="col-md-4 footer-right">
+						<p><a href="#home" class="scroll">TO THE TOP</a></p>
+					</div>
+					<div class="clearfix"></div>
+				</div>-->
+			</div>
+		</div>
+	</div>
+	<!--end-footer-->
+
+</body>
+</html>

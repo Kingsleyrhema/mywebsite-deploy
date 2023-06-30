@@ -1,0 +1,330 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+<title>RHEHUB DEVELOPERS</title>
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/mylogo1.png' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Planeto Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript">addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="{% static 'CSS/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'CSS/style.css' %}" rel='stylesheet' type='text/css' />
+<script src="{% static 'JS/jquery-1.11.0.min.js' %}"></script>
+<link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
+<!---- start-smoth-scrolling---->
+<script type="text/javascript" src="{% static 'JS/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'JS/easing.js' %}"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$(".scroll").click(function(event){		
+		event.preventDefault();
+		$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+	});
+});
+</script>
+<style>
+.services {
+	display: flex;
+	justify-content: space-between;
+}
+
+.services-left,
+.services-middle,
+.services-right {
+	flex-basis: 30%;
+}
+
+.services-left {
+	order: 1;
+}
+
+.services-middle {
+	align-self: center;
+	order: 2;
+}
+
+.services-right {
+	order: 3;
+}
+
+.design {
+	width: 70%;
+	margin-bottom: 20px;
+	padding: 5px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	text-align: center;
+}
+
+
+.poll {
+	margin-top: 20px;
+	background-color: #f5f5f5;
+	border-radius: 3px;
+	height: 10px;
+	overflow: hidden;
+}
+
+
+/* CSS for the modal */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(8px); 
+}
+
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 100%;
+	max-width: 600px;
+}
+
+
+</style>
+<!--start-smoth-scrolling-->
+</head>
+<body>
+<!--start-banner-->
+<div class="banner banner1" id="home">
+	<div class="header">
+		<div class="logo">
+			<img style="size: 10pt;" src="{% static 'images/mylogo1.png' %}">
+			<a href="{% url 'app:index' %}"><b style="font-size: 30px;">REHUB DEVELOPERS</b> <p>founded by Kingsley Rhema</p></a>
+		</div>
+		<div class="navigation">
+			<span class="menu"></span> 
+			<ul class="navig">
+				<li><a href="{% url 'app:index' %}">HOME</a></li><span><img src="images/clk.png" alt="" /></span>
+				<li><a href="{% url 'app:about' %}"  class="active">ABOUT US</a></li><span><img src="images/clk.png" alt="" /></span>
+				<li><a href="{% url 'app:services' %}">SERVICES</a></li><span><img src="images/clk.png" alt="" /></span>
+				<li><a href="{% url 'app:projects' %}">PROJECTS</a></li><span><img src="images/clk.png" alt="" /></span>
+				<li><a href="{% url 'app:contact' %}">CONTACT</a></li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="banner-main">
+		<div class="container">	
+			<div class="banner-top bnr-top">
+				<h1>LEARN MORE ABOUT WHAT WE DO</h1>
+				<h3>Click on any service for more info</h3>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- script-for-menu -->
+<script>
+$("span.menu").click(function(){
+	$("ul.navig").slideToggle("slow" , function(){
+	});
+});
+</script>
+<!-- script-for-menu -->	
+<!--end-banner-->
+<!--start-services-->
+<div class="services">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="design">
+					<h3 onclick="openModal('web-development')">WEBSITE DEVELOPMENT & DESIGN</h3>
+					<div class="poll">
+						<div class="skill" style="width: 85%"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="design">
+					<h3 onclick="openModal('software-development')">SOFTWARE DEVELOPMENT</h3>
+					<div class="poll">
+						<div class="skill" style="width: 80%"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="design">
+					<h3 onclick="openModal('custom-software')">CUSTOM MADE SOFTWARES.</h3>
+					<div class="poll">
+						<div class="skill" style="width: 85%"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="design">
+					<h3 onclick="openModal('mobile-apps')">DEVELOPING OF MOBILE APPLICATIONS</h3>
+					<div class="poll">
+						<div class="skill" style="width: 75%"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 offset-md-4">
+				<div class="design">
+					<h3 onclick="openModal('data-analysis')">DATA ANALYSIS AND VISUALISATION</h3>
+					<div class="poll">
+						<div class="skill" style="width: 70%"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 offset-md-4">
+				<div class="design">
+					<h3 onclick="openModal('graphics-animation')">GRAPHICS AND 3D ANIMATION</h3>
+					<div class="poll">
+						<div class="skill" style="width: 70%"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--end-services-->
+
+<!-- Modal box -->
+<div id="modal-box" class="modal">
+	<div class="modal-content">
+		<span class="close" onclick="closeModal()">&times;</span>
+		<div id="modal-content-placeholder"></div>
+	</div>
+</div>
+
+<script>
+	// Open the modal and display content based on the selected service
+	function openModal(serviceName) {
+		var modal = document.getElementById('modal-box');
+		var modalContent = document.getElementById('modal-content-placeholder');
+
+		// Update the modal content based on the selected service
+		switch (serviceName) {
+			case 'web-development':
+				modalContent.innerHTML = "<b><h1>Website Development & Design</h1>We offer comprehensive website development and design services to help businesses establish a strong online presence and reach their target audience. Our team of skilled developers and designers work collaboratively to create visually appealing and user-friendly websites that align with your brand identity and business goals.</p><p>Our website development process includes:</p><ul><li>Requirements gathering and analysis</li><li>Wireframing and prototyping</li><li>Front-end and back-end development</li><li>Content creation and integration</li><li>Responsive design for optimal viewing across devices</li><li>Search engine optimization (SEO) best practices</li><li>Testing and quality assurance</li><li>Deployment and ongoing maintenance</li></ul><p>Whether you need a simple informational website or a complex e-commerce platform, we tailor our services to meet your specific needs. We focus on delivering a seamless user experience, intuitive navigation, and engaging visual elements to captivate your audience and drive conversions.</p><p>Contact us today to discuss your website development and design requirements.We're excited to help you create a compelling online presence that sets your business apart.</p></b>";
+				break;
+			case 'software-development':
+				modalContent.innerHTML = '<b><h1>Software Development</h1><p>We expertise in software development services to help businesses streamline their operations, enhance efficiency, and achieve their strategic objectives. Our experienced team of software developers works closely with clients to understand their unique requirements and deliver tailored software solutions.</p><p>Our software development process involves:</p><ul><li>Gathering and analyzing requirements</li><li>Designing the software architecture</li><li>Developing the software using industry best practices</li><li>Performing rigorous testing and quality assurance</li><li>Deploying the software and providing ongoing support</li></ul><p>Our expertise spans a wide range of technologies and platforms, including but not limited to:</p><ul><li>Web applications</li><li>Mobile applications</li><li>Enterprise software</li><li>Database management systems</li><li>Cloud-based solutions</li></ul><p>Whether you need a custom software solution, integration with existing systems, or migration to a new platform, we have the skills and expertise to deliver high-quality software that meets your business needs. We follow agile development methodologies to ensure transparency, collaboration, and timely delivery.</p><p>Contact us today to discuss your software development requirements. We are committed to providing innovative and reliable software solutions that drive business growth and success.</p></b>';
+				break;
+			case 'custom-software':
+				modalContent.innerHTML = '<b><h1>Custom Made Software</h1><p>We also expertise in developing custom software applications that are tailored to meet your specific business needs. We understand that off-the-shelf solutions may not always address your unique requirements, and that is where our expertise in custom software development comes in.</p><p>Our custom software development process includes:</p><ul><li>Requirement gathering and analysis</li><li>Designing a solution architecture</li><li>Developing the software application using cutting-edge technologies</li>				<li>Integrating with existing systems, if required</li>				<li>Thorough testing and quality assurance</li>				<li>Deployment and ongoing support</li>			</ul>			<p>With our custom software solutions, you can automate workflows, improve efficiency, enhance data management, and gain a competitive edge in your industry. We collaborate closely with you throughout the development process to ensure that the final product aligns with your business goals and surpasses your expectations.</p><p>Our team of experienced developers follows industry best practices and keeps up-to-date with the latest trends and technologies to deliver scalable, secure, and robust custom applications. Whether you need a web-based application, a desktop application, or a mobile app, we have the expertise to bring your ideas to life.</p><p>Contact us today to discuss your custom software development requirements. We are committed to delivering high-quality, tailor-made solutions that empower your business to succeed.</p></b>';
+				break;
+			case 'mobile-apps':
+			modalContent.innerHTML = `<b><h1>Developing of Mobile Applications</h1>
+        <p>We develop mobile applications for iOS and Android platforms. We understand the increasing importance of mobile technology in today's digital landscape and can help bring your ideas to life with intuitive and engaging mobile apps.</p>
+        <p>Our mobile app development process includes:</p>
+        <ul>
+            <li>Idea conceptualization and requirement gathering: We work closely with you to understand your app concept, target audience, and specific requirements. Our team will collaborate with you to define the app's features, functionality, and user experience.</li>
+            <li>Design and prototyping: Our skilled designers create visually appealing and user-friendly app interfaces. We focus on providing a seamless user experience, ensuring that your app stands out in terms of both aesthetics and usability. Interactive prototypes are developed to showcase the app's flow and functionality.</li>
+            <li>Development and coding: Our experienced mobile app developers leverage their expertise in coding languages and frameworks to bring your app to life. We follow industry best practices and coding standards to ensure the app is robust, scalable, and secure.</li>
+            <li>Testing and quality assurance: We conduct comprehensive testing throughout the development process to identify and fix any bugs or issues. Our quality assurance team performs various types of testing, including functional testing, usability testing, performance testing, and compatibility testing across different devices and operating systems.</li>
+            <li>Deployment and app store submission: Once the app is thoroughly tested and ready, we assist in deploying it to the respective app stores, such as the Apple App Store and Google Play Store. We ensure that the app meets all the necessary guidelines and requirements for a successful submission.</li>
+            <li>Ongoing support and maintenance: We provide post-launch support and maintenance services to ensure that your app runs smoothly and remains up-to-date. We can help with regular updates, feature enhancements, and troubleshooting to keep your app performing at its best.</li>
+        </ul>
+        <p>Whether you need a native mobile app, a cross-platform app, or a hybrid app, our team has the expertise to deliver high-quality mobile solutions. We stay up-to-date with the latest trends and technologies in mobile app development to provide you with innovative and future-proof solutions.</p>
+        <p>Contact us today to discuss your mobile app development project. We're dedicated to helping you create a successful and impactful mobile presence.</p>`;
+    break;
+			case 'data-analysis':
+			modalContent.innerHTML = `<b><h1>Data Analysis and Visualization</h1>
+        <p>We offer comprehensive data analysis and visualization services to help businesses gain valuable insights from their data. We understand the importance of data-driven decision-making and can assist you in transforming raw data into meaningful visualizations and actionable insights.</p>
+        <p>Our data analysis and visualization process includes:</p>
+        <ul>
+            <li>Data collection and preparation: We work with you to identify the relevant data sources and collect the necessary data for analysis. Our team ensures that the data is cleansed, organized, and prepared for analysis.</li>
+            <li>Data exploration and analysis: We use various statistical techniques and data analysis tools to explore your data and uncover patterns, trends, and relationships. Our analysts apply advanced analytical methods to derive meaningful insights and identify key performance indicators.</li>
+            <li>Visualization design and development: Our skilled designers and data visualization experts create visually appealing and interactive dashboards and reports. We leverage industry-leading visualization tools and technologies to present data in a compelling and easy-to-understand format.</li>
+            <li>Dashboard and report customization: We tailor the dashboards and reports to meet your specific requirements. Whether you need real-time dashboards, drill-down capabilities, or custom visualizations, we can customize the solution to match your needs and preferences.</li>
+            <li>Interactive data exploration: Our interactive dashboards enable you to explore your data in a self-service manner. You can filter, drill down, and slice-and-dice the data to uncover insights and answer ad-hoc business questions.</li>
+            <li>Data visualization training and support: We provide training and support to help you leverage the power of data visualization tools effectively. Our experts can guide you in interpreting the visualizations and making data-driven decisions.</li>
+        </ul>
+        <p>With our data analysis and visualization services, you can gain a deeper understanding of your business, identify opportunities for improvement, and make informed decisions. Our team has expertise in various data analysis techniques, including descriptive analytics, predictive analytics, and prescriptive analytics.</p>
+        <p>Contact us today to discuss your data analysis and visualization needs. We're committed to helping you harness the power of data for business success.</p>`;
+    break;
+			case 'graphics-animation':
+			modalContent.innerHTML = `<b><h1>Graphics and 3D Animation</h1>
+        <p>At XYZ Company, we specialize in creating stunning graphics and captivating 3D animations that bring your ideas to life. Whether you need eye-catching visuals for your marketing materials, architectural visualizations, product renderings, or animated videos, our talented team of graphic designers and 3D animators can help.</p>
+        <p>Our graphics and 3D animation services include:</p>
+        <ul>
+            <li>Graphic design and branding: We create visually appealing designs that align with your brand identity. Our designers can develop logos, brochures, posters, infographics, and other marketing collaterals to help you make a strong visual impact.</li>
+            <li>3D modeling and rendering: Using advanced 3D modeling software, we can create realistic and detailed 3D models of products, buildings, environments, or any other objects. We pay attention to textures, lighting, and materials to ensure a high level of realism in the final renderings.</li>
+            <li>Animation and motion graphics: Our skilled animators bring your concepts to life through captivating animations and motion graphics. We can create animated explainer videos, product demonstrations, architectural walkthroughs, character animations, and more.</li>
+            <li>Visual effects (VFX): If you require special effects for your videos or movies, we can incorporate VFX elements to enhance the visual impact. Our VFX artists can create realistic simulations, explosions, particle effects, and compositing to seamlessly integrate computer-generated graphics with live-action footage.</li>
+            <li>Virtual reality (VR) and augmented reality (AR) experiences: We have expertise in creating immersive VR and AR experiences that allow users to interact with virtual objects or explore virtual environments. From architectural visualizations to interactive training simulations, we can help you leverage these technologies to engage your audience.</li>
+            <li>Post-production and editing: Our team provides comprehensive post-production services, including video editing, color grading, sound design, and adding visual effects. We ensure that the final output is polished and meets your specifications.</li>
+        </ul>
+        <p>With our graphics and 3D animation services, you can effectively communicate your ideas, engage your audience, and stand out in a visually competitive landscape. We combine artistic creativity with technical expertise to deliver visually stunning and impactful graphics and animations.</p>
+        <p>Contact us today to discuss your graphics and 3D animation requirements. We're dedicated to bringing your visions to life through captivating visuals and immersive experiences.</p>`;
+    break;
+			default:
+				modalContent.innerHTML = ''; // Clear the content if no matching service found
+				break;
+		}
+
+		modal.style.display = 'block';
+	}
+
+	// Close the modal
+	function closeModal() {
+		var modal = document.getElementById('modal-box');
+		modal.style.display = 'none';
+	}
+</script>
+
+
+<!--start-footer-->
+<div class="footer">
+	<div class="container">
+		<div class="footer-main">
+			<div class="contact">
+				<div class="col-md-8 contact-left">
+					<img style="size: 10pt;" src="{% static 'images/mylogo1.png' %}">
+					<b style="font-size: 30px;">REHUB DEVELOPERS</b> <p>founded by Kingsley Rhema</p>
+				</div>
+				<div class="col-md-4 contact-right footer-left">
+					<h3>QUICK CONTACTS</h3>
+					<p>+234 808 204 6332</p>
+					<p><a href="mailto:kingsleyrhema135@gmail.com" style="font-size: 20px;">OR click to send us a mail @ kingsleyrhema135@gmail.com</a></p>
+					<ul>
+						<li><a href="https://web.facebook.com/remzo.kingsley"><span class="fb"><img style="height: 30px;" src="{% static 'images/fb_icon.jpg' %}"> </span></a></li>
+						<li><a href="https://twitter.com/ikechukwurhema"><span class="twit"><img style="height: 30px;" src="{% static 'images/twitter_icon.jpg' %}"></span></a></li>
+						<li><a href="https://www.instagram.com/kingsleyrhema/"><span class="insta"><img style="height: 30px;" src="{% static 'images/insta_icon.jpeg' %}"></span></a></li>
+						<li><a href="https://www.youtube.com/channel/UChHGxpOkkYciX_1SSL0LKpw"><span class="sky"> <img style="height: 50px;" src="{% static 'images/youtube_icon.jpg' %}"> </span></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--end-footer-->
+<!--start-smoth-scrolling-->
+<script type="text/javascript">
+	$(document).ready(function() {
+		/*
+		var defaults = {
+			containerID: 'toTop', // fading element id
+			containerHoverID: 'toTopHover', // fading element hover id
+			scrollSpeed: 1200,
+			easingType: 'linear' 
+		};
+		*/
+								
+		$().UItoTop({ easingType: 'easeOutQuart' });
+								
+		});
+</script>
+<a href="#home" id="toTop" class="scroll" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+<!--end-smoth-scrolling-->
+<!--end-container-->
+</body>
+</html>
