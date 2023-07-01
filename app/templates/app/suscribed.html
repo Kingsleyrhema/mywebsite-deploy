@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% for message in messages %}
+<h2>{{ message }}</h2>
+{% endfor %}
+<a href="{% url 'app:index' %}"><button value="goback" type="submit" name="back" >Go back</button></a>
+
+<!--<h1>Do you want to unsuscribe click the button below</h1>
+<form method="POST">
+
+<button name="unsuscribe" type="submit" value="delete">UNSUSCRIBE</button>
+</form>-->
+</body>
+</html>
