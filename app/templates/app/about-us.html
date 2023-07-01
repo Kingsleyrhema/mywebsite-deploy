@@ -3,7 +3,7 @@
 <html>
 <head>
 <title>About Us</title>
-<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/mylogo1.png' %}">
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/mylogo.png' %}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Planeto Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
@@ -28,6 +28,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</script>
 
 <!--start-smoth-scrolling-->
+<style>
+	.founder .col-md-6 p {
+	  font-size: 16px;
+	  line-height: 1.6;
+	  color: #333333;
+	  margin-bottom: 20px;
+	}
+  </style>
+  
 </head>
 <body>
 <!--start-banner-->
@@ -116,20 +125,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
   </div>
   <!--end-team-->
-  
   <!--start-founder-->
-  <div class="founder">
+<div class="founder">
 	<div class="container">
 	  <div class="row">
-		<div class="col-md-12">
+		<div class="col-md-6">
 		  <h3>About the CEO/Founder</h3>
-		  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate id fugiat aliquam pariatur illum. Aut libero facere doloremque nesciunt, reprehenderit illum asperiores soluta voluptatem veritatis incidunt neque perspiciatis illo ullam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident cupiditate ullam dicta modi mollitia ut accusamus vitae, reiciendis sit, iusto odit? Tempore officiis commodi, distinctio placeat ea recusandae accusamus ab!</p>
+		  <p>Welcome to my web page! I am a tech enthusiast with a strong dedication to providing top-notch tech services. With a lifelong passion for technology, I have honed my skills and expertise to offer a range of services tailored to meet your technological needs.</p>
+  
+		  <p>From advanced Python programming to the exciting realm of machine learning and the revolutionary potential of blockchain technology, I bring a wealth of knowledge and experience to the table. I am committed to delivering high-quality solutions that leverage the latest advancements in the tech industry.</p>
+		  
+		  <p>Whether you require assistance in developing custom software solutions, implementing machine learning algorithms, or exploring the potential of blockchain applications, I am here to guide you every step of the way. With a focus on innovation and efficiency, I strive to deliver results that exceed your expectations.</p>
+		</div>
+		<div class="col-md-6">
+		  <p>By choosing my tech services, you gain access to a dedicated professional who will work tirelessly to understand your unique requirements and provide tailored solutions that align with your goals. I pride myself on delivering exceptional service, ensuring that your experience is seamless, efficient, and ultimately successful.</p>
+  
+		  <p>I am talented in multitasking, allowing me to handle multiple aspects of your project simultaneously. This enables me to streamline the process, save time, and deliver efficient results without compromising quality.</p>
+  
+		  <p>I invite you to explore the various services I offer and get in touch to discuss how I can assist you with your tech needs. Together, let's unlock the power of technology and embark on a journey of growth and success.</p>
 		</div>
 	  </div>
 	</div>
   </div>
   <!--end-founder-->
-  
   
 		
 			<div class="team-msg">
@@ -151,12 +169,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="contact">
 					<div class="col-md-8 contact-left">
 						<img style="size: 10pt;" src="{% static 'images/mylogo1.png' %}">
-						<b style="font-size: 30px;">REHUB DEVELOPERS</b> <p>founded by Kingsley Rhema</p>
+						<b style="font-size: 30px;">REHUB DEVELOPERS</b>
+						<p style="font-size: 16px;">founded by Kingsley Rhema</p>
+						<div class="newsletter-form" style="margin-top: 20px;">
+							<h3 style="font-size: 24px;">Subscribe to Our Newsletter</h3>
+							{% if messages %}
+								<div id="newsletter-modal-box" style="display: block;">
+									<button id="close-modal">Close</button>
+									{% for message in messages %}
+										<h3>{{ message }}</h3>
+									{% endfor %}
+								</div>
+							{% endif %}
+							<form class="newsletter-form" id="newsletter-form" method="POST">
+								{% csrf_token %}
+								<br><input class="newsletter-input" type="email" name="email" id="email-input" placeholder="Your email address" required>
+								<br><button class="newsletter-submit" name="send_nwls" value="submit" type="submit" id="submit-button" disabled>Subscribe</button>
+							</form>
+						</div>
 					</div>
 					<div class="col-md-4 contact-right footer-left">
-						<h3>QUICK CONTACTS</h3>
-						<p>+234 808 204 6332</p>
-						<p><a href="mailto:inforehubdeveloper@gmail.com" style="font-size: 20px;">OR click to send us a mail @ inforehubdeveloper@gmail.com</a></p>
+						<h3 style="font-size: 20px;">QUICK CONTACTS</h3>
+						<p style="font-size: 18px;"><b>+234 808 204 6332</p>
+						<p style="font-size: 20px;">
+							<a href="mailto:inforehubdeveloper@gmail.com" style="display: inline-block; padding: 3px 8px; background-color: #f5f5f5; color: #333; text-decoration: none; border-radius: 5px; border: 1px solid #ccc; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);">
+								inforehubdeveloper@gmail.com
+							</a>
+						</p>
+						<p style="font-size: 16px;"><a href="mailto:inforehubdeveloper@gmail.com"></a></p>
+						
+						
 						<ul>
 							<li><a href="https://web.facebook.com/remzo.kingsley"><span class="fb"><img style="height: 30px;" src="{% static 'images/fb_icon.jpg' %}"> </span></a></li>
 							<li><a href="https://twitter.com/ikechukwurhema"><span class="twit"><img style="height: 30px;" src="{% static 'images/twitter_icon.jpg' %}"></span></a></li>
@@ -169,6 +211,71 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
+	
+	<style>
+		#newsletter-modal-box {
+			display: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #fff;
+			padding: 20px;
+			width: 450px;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+			z-index: 9999;
+			text-align: center;
+		}
+	
+		#close-modal {
+			display: none;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			cursor: pointer;
+			color: #333;
+			background-color: #fff;
+			border: none;
+			font-size: 16px;
+			padding: 5px;
+			border-radius: 50%;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+		}
+	
+		#close-modal:hover {
+			color: #fff;
+			background-color: #333;
+		}
+		
+	</style>
+	
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			var closeButton = document.getElementById("close-modal");
+			var modalBox = document.getElementById("newsletter-modal-box");
+	
+			closeButton.addEventListener("click", function() {
+				modalBox.style.display = "none";
+				closeButton.style.display = "none";
+			});
+	
+			{% if messages %}
+				modalBox.style.display = "block";
+				closeButton.style.display = "block";
+			{% endif %}
+		});
+	</script>
+
+
+<script>
+	// Enable submit button when the email input has a valid format
+	document.getElementById('email-input').addEventListener('input', function (event) {
+		var emailInput = event.target;
+		var submitButton = document.getElementById('submit-button');
+		submitButton.disabled = !emailInput.validity.valid;
+	});
+</script>
+	
 	<!--end-footer-->
 </body>
 </html>

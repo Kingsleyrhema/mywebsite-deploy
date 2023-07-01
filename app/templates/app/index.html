@@ -464,49 +464,121 @@ $(function () {
 		modal.style.display = 'none';
 	}
 </script>
-
-	<!--start-footer-->
-	<div class="footer">
-		<div class="container">
-			<div class="footer-main">
-				<div class="contact">
-					<div class="col-md-8 contact-left">
-						<img style="size: 10pt;" src="{% static 'images/mylogo1.png' %}">
-						<b style="font-size: 30px;">REHUB DEVELOPERS</b> <p>founded by Kingsley Rhema</p>
+<!--start-footer-->
+<div class="footer">
+	<div class="container">
+		<div class="footer-main">
+			<div class="contact">
+				<div class="col-md-8 contact-left">
+					<img style="size: 10pt;" src="{% static 'images/mylogo1.png' %}">
+					<b style="font-size: 30px;">REHUB DEVELOPERS</b>
+					<p style="font-size: 16px;">founded by Kingsley Rhema</p>
+					<div class="newsletter-form" style="margin-top: 20px;">
+						<h3 style="font-size: 24px;">Subscribe to Our Newsletter</h3>
+						{% if messages %}
+							<div id="newsletter-modal-box" style="display: block;">
+								<button id="close-modal">Close</button>
+								{% for message in messages %}
+									<h3>{{ message }}</h3>
+								{% endfor %}
+							</div>
+						{% endif %}
+						<form class="newsletter-form" id="newsletter-form" method="POST">
+							{% csrf_token %}
+							<br><input class="newsletter-input" type="email" name="email" id="email-input" placeholder="Your email address" required>
+							<br><button class="newsletter-submit" name="send_nwls" value="submit" type="submit" id="submit-button" disabled>Subscribe</button>
+						</form>
 					</div>
-					<div class="col-md-4 contact-right footer-left">
-						<h3>QUICK CONTACTS</h3>
-						<p>+234 808 204 6332</p>
-						<p><a href="mailto:inforehubdeveloper@gmail.com" style="font-size: 20px;">OR click to send us a mail @ inforehubdeveloper@gmail.com</a></p>
-						<ul>
-							<li><a href="https://web.facebook.com/remzo.kingsley"><span class="fb"><img style="height: 30px;" src="{% static 'images/fb_icon.jpg' %}"> </span></a></li>
-							<li><a href="https://twitter.com/ikechukwurhema"><span class="twit"><img style="height: 30px;" src="{% static 'images/twitter_icon.jpg' %}"></span></a></li>
-							<li><a href="https://www.instagram.com/kingsleyrhema/"><span class="insta"><img style="height: 30px;" src="{% static 'images/insta_icon.jpeg' %}"></span></a></li>
-							<li><a href="https://www.youtube.com/channel/UChHGxpOkkYciX_1SSL0LKpw"><span class="sky"> <img style="height: 50px;" src="{% static 'images/youtube_icon.jpg' %}"> </span></a></li>
-						</ul>
-					</div>
-					<div class="clearfix"></div>
-				</div><!--
-				<div class="footer-bottom">
-					<div class="col-md-4 footer-left">
-						<ul>
-							<li><a href="#"><span class="fb"> </span></a></li>
-							<li><a href="#"><span class="twit"> </span></a></li>
-							<li><a href="#"><span class="sky"> </span></a></li>
-						</ul>
-					</div>
-					<div class="col-md-4 footer-middle">
-						<p>input something  </p>
-					</div>
-					<div class="col-md-4 footer-right">
-						<p><a href="#home" class="scroll">TO THE TOP</a></p>
-					</div>
-					<div class="clearfix"></div>
-				</div>-->
+				</div>
+				<div class="col-md-4 contact-right footer-left">
+					<h3 style="font-size: 20px;">QUICK CONTACTS</h3>
+					<p style="font-size: 18px;"><b>+234 808 204 6332</p>
+					<p style="font-size: 20px;">
+						<a href="mailto:inforehubdeveloper@gmail.com" style="display: inline-block; padding: 3px 8px; background-color: #f5f5f5; color: #333; text-decoration: none; border-radius: 5px; border: 1px solid #ccc; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);">
+							inforehubdeveloper@gmail.com
+						</a>
+					</p>
+					<p style="font-size: 16px;"><a href="mailto:inforehubdeveloper@gmail.com"></a></p>
+					
+					
+					<ul>
+						<li><a href="https://web.facebook.com/remzo.kingsley"><span class="fb"><img style="height: 30px;" src="{% static 'images/fb_icon.jpg' %}"> </span></a></li>
+						<li><a href="https://twitter.com/ikechukwurhema"><span class="twit"><img style="height: 30px;" src="{% static 'images/twitter_icon.jpg' %}"></span></a></li>
+						<li><a href="https://www.instagram.com/kingsleyrhema/"><span class="insta"><img style="height: 30px;" src="{% static 'images/insta_icon.jpeg' %}"></span></a></li>
+						<li><a href="https://www.youtube.com/channel/UChHGxpOkkYciX_1SSL0LKpw"><span class="sky"> <img style="height: 50px;" src="{% static 'images/youtube_icon.jpg' %}"> </span></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
 			</div>
 		</div>
 	</div>
-	<!--end-footer-->
+</div>
+
+<style>
+	#newsletter-modal-box {
+		display: none;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: #fff;
+		padding: 20px;
+		width: 450px;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+		z-index: 9999;
+		text-align: center;
+	}
+
+	#close-modal {
+		display: none;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		cursor: pointer;
+		color: #333;
+		background-color: #fff;
+		border: none;
+		font-size: 16px;
+		padding: 5px;
+		border-radius: 50%;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+	}
+
+	#close-modal:hover {
+		color: #fff;
+		background-color: #333;
+	}
+	
+</style>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		var closeButton = document.getElementById("close-modal");
+		var modalBox = document.getElementById("newsletter-modal-box");
+
+		closeButton.addEventListener("click", function() {
+			modalBox.style.display = "none";
+			closeButton.style.display = "none";
+		});
+
+		{% if messages %}
+			modalBox.style.display = "block";
+			closeButton.style.display = "block";
+		{% endif %}
+	});
+</script>
+
+
+<script>
+// Enable submit button when the email input has a valid format
+document.getElementById('email-input').addEventListener('input', function (event) {
+	var emailInput = event.target;
+	var submitButton = document.getElementById('submit-button');
+	submitButton.disabled = !emailInput.validity.valid;
+});
+</script>
+
+<!--end-footer-->
 
 </body>
 </html>

@@ -151,7 +151,8 @@ SECRET_KEY = 'django-insecure-#5q-vgy)gxa60&_r0dq6vq520u30i8@1db@lt*8f6=+%k^&f4a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -238,6 +239,18 @@ USE_I18N = True
 
 USE_TZ = True
 import os
+CONTACT_EMAIL = 'inforehubdeveloper@gmail.com'
+# settings.py
+
+# Set the email backend to SMTP
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# SMTP configuration
+EMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server address
+EMAIL_PORT = 587  # Replace with the SMTP server port
+EMAIL_HOST_USER = 'inforehubdeveloper@gmail.com'  # Replace with your email address
+EMAIL_HOST_PASSWORD = 'yobmydltqhklduch'  # Replace with your email password
+EMAIL_USE_TLS = True  # Use TLS encryption for secure connection
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

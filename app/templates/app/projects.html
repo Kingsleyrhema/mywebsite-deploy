@@ -1,110 +1,78 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-		/* CSS for the modal */
-		.modal {
-			display: none;
-			position: fixed;
-			z-index: 1;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			overflow: auto;
-			background-color: rgba(0, 0, 0, 0.4);
-		}
-
-		.modal-content {
-			background-color: #fefefe;
-			margin: 15% auto;
-			padding: 20px;
-			border: 1px solid #888;
-			width: 80%;
-			max-width: 600px;
-		}
-
-		.coming-soon-container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 100vh;
-			font-family: Arial, sans-serif;
-			text-align: center;
-			background-color: #f1f1f1;
-		}
-
-		.coming-soon-title {
-			font-size: 36px;
-			margin-bottom: 20px;
-		}
-
-		.coming-soon-description {
-			font-size: 18px;
-			margin-bottom: 30px;
-		}
-
-		.newsletter-form {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-bottom: 20px;
-		}
-
-		.newsletter-input {
-			padding: 10px;
-			border: 1px solid #ccc;
-			border-radius: 4px;
-			width: 300px;
-			margin-right: 10px;
-		}
-
-		.newsletter-submit {
-			padding: 10px 20px;
-			background-color: #4CAF50;
-			color: #fff;
-			border: none;
-			border-radius: 4px;
-			cursor: pointer;
-		}
-
-		.newsletter-submit:hover {
-			background-color: #45a049;
-		}
-
-		.newsletter-submit:disabled {
-			background-color: #ccc;
-			cursor: not-allowed;
-		}
-	</style>
+    <title>View Our Projects</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/mylogo.png' %}">
+    <link href="{% static 'CSS/style.css' %}" rel='stylesheet' type='text/css' />
 </head>
 <body>
-	<!-- Coming Soon Page -->
-	<div class="coming-soon-container">
-		<h1 class="coming-soon-title">Coming Soon</h1>
-		<p class="coming-soon-description">Subscribe to our newsletter to stay updated:</p>
-		<form class="newsletter-form" id="newsletter-form">
-			<input class="newsletter-input" type="email" id="email-input" placeholder="Your email address" required>
-			<button class="newsletter-submit" type="submit" id="submit-button" disabled>Subscribe</button>
-		</form>
-	</div>
+    {% if messages %}
+    <div id="modal-box" style="display: block;">
+        <div class="modal-content">
+            <span id="close-modal">&times;</span>
+            {% for message in messages %}
+            <h2>{{ message }}</h2>
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var closeModal = document.getElementById("close-modal");
+            var modalBox = document.getElementById("modal-box");
 
-	<!-- Modal box -->
-	<div id="modal-box" class="modal">
-		<div class="modal-content">
-			<span class="close" onclick="closeModal()">&times;</span>
-			<div id="modal-content-placeholder"></div>
-		</div>
-	</div>
+            closeModal.addEventListener("click", function () {
+                modalBox.style.display = "none";
+            });
 
-	<script>
-		// Enable submit button when the email input has a valid format
-		document.getElementById('email-input').addEventListener('input', function (event) {
-			var emailInput = event.target;
-			var submitButton = document.getElementById('submit-button');
-			submitButton.disabled = !emailInput.validity.valid;
-		});
-	</script>
+            // Close the modal box after 5 seconds
+            setTimeout(function () {
+                modalBox.style.display = "none";
+            }, 5000); // Adjust the time here (in milliseconds) as needed
+        });
+    </script>
+    {% endif %}
+
+    <!-- Coming Soon Page -->
+    <div class="coming-soon-container">
+        <h1 class="coming-soon-title">Coming Soon</h1>
+        <p class="coming-soon-description">Subscribe to our newsletter to stay updated:</p>
+        <form class="newsletter-form" id="newsletter-form" method="POST">
+            {% csrf_token %}
+            <input class="newsletter-input" type="email" name="email" id="email-input" placeholder="Your email address" required>
+            <button class="newsletter-submit" name="send_nwls" value="submit" type="submit" id="submit-button" >Subscribe</button>
+        </form>
+        <a href="{% url 'app:index' %}"><button class="newsletter-submit" type="submit" name="back">Go back</button></a>
+    </div>
+
+    <style>
+        /* Styles for the modal box */
+        #modal-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            width: 400px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            text-align: center;
+        }
+
+        .modal-content {
+            display: inline-block;
+            text-align: left;
+        }
+
+        #close-modal {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+    </style>
 </body>
 </html>
