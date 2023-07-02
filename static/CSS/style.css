@@ -3992,4 +3992,170 @@ ul#filters {
   margin-top: 10px;
 }
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+.coming-soon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.coming-soon-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.coming-soon-description {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.newsletter-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px;
+  margin-right: 10px;
+}
+
+.newsletter-submit {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.newsletter-submit:hover {
+  background-color: #45a049;
+}
+
+.newsletter-submit:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.footer {
+  background-color: #f5f5f5;
+  padding: 40px 0;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-left img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.contact-left b {
+  font-size: 30px;
+  color: #333;
+}
+
+.contact-left p {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  margin-top: 20px;
+}
+
+.newsletter-form h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.newsletter-form input[type="email"] {
+  width: 250px;
+  height: 40px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.newsletter-form button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.newsletter-form button[type="submit"]:hover {
+  background-color: #555;
+}
+
+.contact-right h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-right p {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.contact-right a {
+  color: #555;
+}
+
+.contact-right a:hover {
+  color: #333;
+}
+
+.contact-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.contact-right ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
 /*--media-quaries-starts-here--*/
