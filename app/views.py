@@ -16,7 +16,7 @@ def send_newsletter(receiver_email):
         sender_email = "inforehubdeveloper@gmail.com"
         password = 'yobmydltqhklduch'
         message = MIMEMultipart("alternative")
-        message["Subject"] = "Your Authentication Token"
+        message["Subject"] = "You registered to our newsletter"
         message["From"] = sender_email
         message["To"] = receiver_email
         text = f"Hi,\n\nYour token is: token\n\nBest regards,\nKingsley"
